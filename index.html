@@ -1,17 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - CSS Fundamentals 2</title>
+    <style>
+        /* === TASK 2: Pseudo-elements === */
+        h1::first-letter {
+            color: blue;
+        }
+
+        /* === TASK 3: Universal Box Sizing === */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* === BASE STYLES FOR LAYOUT ELEMENTS === */
+        header, footer, section, aside, main {
+            padding: 1em;
+        }
+
+        header, footer {
+            color: white;
+            background-color: #1976D2;
+            flex-grow: 1;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column; /* Using class .col logic, but setting here for clarity */
+            justify-content: center;
+            color: #212121;
+            background-color: #BBDEFB;
+            flex-grow: 3;
+        }
+
+        section {
+            background-color: #FF4081;
+            color: white;
+            flex-grow: 1;
+            margin: 0.5em;
+        }
+
+        main {
+            background-color: #2196F3;
+            color: white;
+            flex-grow: 7;
+        }
+
+        /* === FLEXBOX LAYOUT (Tasks 5 onward) === */
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #FFFFFF;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+
+        /* Style for the row container */
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 8; /* This row will take up available space between header/footer */
+        }
+
+        /* Style for column containers (like the aside holding sections) */
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === TASK 6: MEDIA QUERY FOR RESPONSIVENESS === */
+        @media screen and (max-width: 600px) {
+            div.row {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-<style>
-
-</style>
 <body>
+    <!-- TASK 2: Heading with styled first letter -->
+    <h1>Welcome</h1>
 
-
-
-	
+    <!-- Main layout structure from the lab -->
+    <header>Header</header>
+    <div class="row">
+        <aside class="col">
+            <!-- "Aside" text removed as per lab instructions, only sections remain -->
+            <section>Section 1</section>
+            <section>Section 2</section>
+        </aside>
+        <main>Main</main>
+    </div>
+    <footer>Footer</footer>
 </body>
 </html>
